@@ -4,20 +4,21 @@ import {useState} from "react";
 
 
 export default function Users() {
+    let classNameUsersDiv = 'users_div'
     let [users,setUsers] = useState( []);   // [get()- в даному випадку [] ,set()] отримати дані і встановити нові;
     // або записати так:
     // let state = useState();
     // let users = state.users();
     // let setUsers = state.setUsers();
 
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://rickandmortyapi.com/api/character')
             .then(value => value.json())
             .then(value => {
-                setUsers(value);
+                setUsers(value.results);
             });
 
     return (
-        <div>
+        <div className={classNameUsersDiv}>
             {
                 users.map((user, index)=>(<User item={user} key={index}/>))
             }
