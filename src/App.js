@@ -10,7 +10,7 @@ function App() {
 
    return (
         <div>
-            <h2>app component header</h2>
+            <h2>Users info </h2>
             <Users/>
             {/*<UserChoser/>*/}
         </div>);
