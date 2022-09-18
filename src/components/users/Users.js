@@ -30,11 +30,10 @@ export default function Users() {
     // }, [])
 
     useEffect(() => {
-     // getUsers().then(value => setUsers(value));
-      getUsersAxios().then(value => setUsers(value.data))
+        // getUsers().then(value => setUsers(value));
+        getUsersAxios().then(value => setUsers(value.data))
 
     }, [])
-
 
 
     return (
@@ -43,10 +42,10 @@ export default function Users() {
 
         <div>
             <hr/>
-            <div>{JSON.stringify(user?.address)}</div>
-            {/*user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>*/}
-            <h3>{ user?.username}</h3>
-            <h3>{ user?.address.street}</h3>
+            {/*<div>{JSON.stringify(user?.address)}</div>*/}
+            {user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>}
+            <h3>{user?.username}</h3>
+            <h3>  {user?.address.street}</h3>
             <hr/>
 
             {
