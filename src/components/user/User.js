@@ -2,7 +2,7 @@ export default function User(props) {  // диструктеруємо обєк�
     let {item: user, lift} = props; // заміняємо назву компоненту усюди 1 раз, щоб не замінювати в усіх полях окремо
     return (
         <div>
-            <h2>{user.id} - {user.name}</h2>
+            <h2> Id : {user.id} - {user.name}</h2>
             <button onClick={() => {
                 lift(user)
             }}

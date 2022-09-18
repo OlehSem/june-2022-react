@@ -43,11 +43,11 @@ export default function Users() {
         <div>
             <hr/>
             {/*<div>{JSON.stringify(user?.address)}</div>*/}
-            {user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>}
-            <h3>{user?.username}</h3>
-            <h3>  {user?.address.street}</h3>
+            {/*{user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>}*/}
+            <h3> {user? <p>adad {user?.id}</p> :<p></p> }</h3>
+            {/*<h3> {user?.address.street}</h3>*/}
             <hr/>
-
+            {/*Age : {simpson.age}*/}
             {
                 users.map((user, index) => (<User item={user} key={index} lift={lift}/>))
             }
