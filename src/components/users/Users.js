@@ -6,7 +6,8 @@ import {getUsersAxios} from "../../services/user.api.axios.service";
 
 
 export default function Users() {
-
+     let classNameUsers='homework2_div'
+     let classNameUsersbutton='button_info'
     // useEffect  1 єдиний раз,  використовуються, для того щоб не було перезавантаження, щоб запит виконався тільки 1 раз.
     //Зазвичай всі запити будемо виконувати всередині useEffect;
 
@@ -40,13 +41,14 @@ export default function Users() {
         // робимо перевірку тру фолс в 2 способи , які наведені нижче , null завжди кастується до false,
         // а обєкт - {} - завжди буде true, бо під нього уже виділяється память
 
-        <div>
+        <div className={classNameUsers}>
             <hr/>
             {/*<div>{JSON.stringify(user?.address)}</div>*/}
             {/*{user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>}*/}
-            <h3> {user? <p>Id: {user?.id} Username: {user?.username}</p> :<p></p> }</h3>
-            <h3> {user? <p>Email: {user?.email}</p> :<p></p> }</h3>
-            <h3> {user? <p>Phone : {user?.phone}</p> :<p></p> }</h3>
+            <div className={classNameUsersbutton}><h3> {user ? <p>Id: {user?.id} Username: {user?.username}</p> : <p></p>}</h3>
+                <h3> {user ? <p>Email: {user?.email}</p> : <p></p>}</h3>
+                <h3> {user ? <p>Phone : {user?.phone}</p> : <p></p>}</h3>
+            </div>
             <hr/>
             {
                 users.map((user, index) => (<User item={user} key={index} lift={lift}/>))

@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.users_info{
+  text-align: center;
+}
+.button_info{
+  font-family: "Calibri Light";
+  text-align: center;
+  font-size: 14px;
+}

@@ -6,11 +6,11 @@ import Users from "./components/users/Users";
 //import User from "./components/user/User"; // викликаємо по дефолту
 
 function App() {
-
+ let classNameUsersInfo='users_info'
 
    return (
         <div>
-            <h2>Users info </h2>
+            <h2 className={classNameUsersInfo}>Users info </h2>
             <Users/>
             {/*<UserChoser/>*/}
         </div>);
