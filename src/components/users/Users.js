@@ -6,10 +6,7 @@ import {getUsersAxios} from "../../services/user.api.axios.service";
 
 
 export default function Users() {
-    // або записати так:
-    // let state = useState();
-    // let users = state.users();
-    // let setUsers = state.setUsers();
+
     // useEffect  1 єдиний раз,  використовуються, для того щоб не було перезавантаження, щоб запит виконався тільки 1 раз.
     //Зазвичай всі запити будемо виконувати всередині useEffect;
 
@@ -19,7 +16,7 @@ export default function Users() {
 
 
     const lift = (something) => {
-        //console.log(something);
+        console.log(something);
         setUser(something);
     }
 
@@ -48,7 +45,8 @@ export default function Users() {
             <hr/>
             {/*user && <div>{JSON.stringify(user)}</div>*/}
             {/*user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>*/}
-            <h3>{user?.username}</h3>
+            <h3>{ user?.username}</h3>
+            <h3>{ user?.address}</h3>
             <hr/>
 
             {
