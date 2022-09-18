@@ -43,10 +43,10 @@ export default function Users() {
 
         <div>
             <hr/>
-            {/*user && <div>{JSON.stringify(user)}</div>*/}
+            <div>{JSON.stringify(user?.address)}</div>
             {/*user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>*/}
             <h3>{ user?.username}</h3>
-            <h3>{ user?.address}</h3>
+            <h3>{ user?.address.street}</h3>
             <hr/>
 
             {
