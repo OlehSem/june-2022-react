@@ -12,5 +12,11 @@ export default function User(props) {  // диструктеруємо обєк�
     );
 
 }
+/*{user.colors.map(({id, name}) => {
+    return (
+        <a key={id} className='grey-text text-darken-4'>{name}</a>
+    )
+})}
 
 
+ */
