@@ -37,10 +37,60 @@
   }
 }
 .users_info{
+  font-family: "fantasy";
+  font-style:normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -2px;
   text-align: center;
 }
 .button_info{
-  font-family: "Calibri Light";
   text-align: center;
-  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -2px;
+}
+.button_onclick {
+  width: 30%;
+  margin-top: 30px;
+  background: rgb(28, 28, 28);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  border-radius: 4px;
+  padding: 5px 5px 5px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  border: 0px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.user_h2{
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: -2px;
+}
+
+.user_div{
+  width: 50%;
+  min-width: 250px;
+  min-height: 140px;
+  text-align: center;
+  margin: 5px auto;
+  box-shadow: 0.2rem 0.2rem 0.3rem #c4c4c4, -0.1rem -0.1rem 0.3rem #cbcbcb;
+}
+.users_div,.simpsons_div,.mortys_div {
+  margin-top: 40px;
+  font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.homework1{
+  text-align: center;
 }

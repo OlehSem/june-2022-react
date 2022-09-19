@@ -10,7 +10,7 @@ function App() {
 
    return (
         <div>
-            <h2 className={classNameUsersInfo}>Users info </h2>
+            <h2 className={classNameUsersInfo}>Users info : </h2>
             <Users/>
             {/*<UserChoser/>*/}
         </div>);

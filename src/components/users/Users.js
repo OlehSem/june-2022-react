@@ -45,9 +45,10 @@ export default function Users() {
             <hr/>
             {/*<div>{JSON.stringify(user?.address)}</div>*/}
             {/*{user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>}*/}
-            <div className={classNameUsersbutton}><h3> {user ? <p>Id: {user?.id} Username: {user?.username}</p> : <p></p>}</h3>
-                <h3> {user ? <p>Email: {user?.email}</p> : <p></p>}</h3>
-                <h3> {user ? <p>Phone : {user?.phone}</p> : <p></p>}</h3>
+            <div className={classNameUsersbutton}>
+                <p> {user ? <p>Id: {user?.id} Username: {user?.username}</p> : <p></p>}</p>
+                <p> {user ? <p>Email: {user?.email}</p> : <p></p>}</p>
+                <p> {user ? <p>Phone : {user?.phone}</p> : <p></p>}</p>
             </div>
             <hr/>
             {
