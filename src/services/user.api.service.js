@@ -1,18 +1,18 @@
 
 
-let _url='https://api.spacexdata.com/v3/launches/';
+let _url='https://api.spacexdata.com/v3/launches?limit=86';
 
-const getUsers = () => {
+const getSpacex = () => {
     return fetch(_url)
         .then(value => value.json())
 
 } //return promise
 
-const getUser = (id)=>{
+const getSpacexOne = (id)=>{
     return fetch(_url+'/'+id)
         .then(value => value.json())
 
 }
 
-export {getUsers,getUser};
+export {getSpacex,getSpacexOne};
 

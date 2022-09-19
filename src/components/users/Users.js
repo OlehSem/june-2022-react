@@ -3,6 +3,8 @@ import User from "../user/User";
 import {useEffect, useState} from "react";
 //import {getUsers} from "../../services/user.api.service";
 import {getUsersAxios} from "../../services/user.api.axios.service";
+import {getSpacex} from "../../services/user.api.service";
+import Spacex from "../spacex/SpaceX";
 
 
 export default function Users() {
@@ -11,7 +13,8 @@ export default function Users() {
     // useEffect  1 єдиний раз,  використовуються, для того щоб не було перезавантаження, щоб запит виконався тільки 1 раз.
     //Зазвичай всі запити будемо виконувати всередині useEffect;
 
-    let [users, setUsers] = useState([]);   // [get()- в даному випадку [] ,set()] отримати дані і встановити нові;
+    let [users, setUsers] = useState([]);// [get()- в даному випадку [] ,set()] отримати дані і встановити нові;
+    let [spacex,setSpacex] = useState([]);
     let [user, setUser] = useState(null);  // стейтліфтінг, бо ми піднімаємо стан компонента юзер на рівень вище.
     //Тобто беремо функцію ліфт, за посиланням наповнюємо обєктом юзер, який знаходиться на рівень вище, і вона його виводить
 
@@ -31,7 +34,7 @@ export default function Users() {
     // }, [])
 
     useEffect(() => {
-        // getUsers().then(value => setUsers(value));
+         getSpacex().then(value => setSpacex(value));
         getUsersAxios().then(value => setUsers(value.data))
 
     }, [])
@@ -50,10 +53,9 @@ export default function Users() {
                 <p> {user ? <p>Email: {user?.email}</p> : <p></p>}</p>
                 <p> {user ? <p>Phone : {user?.phone}</p> : <p></p>}</p>
             </div>
+            {spacex.map((spacex, index) => (<Spacex item1={spacex} key={index}/>))}
             <hr/>
-            {
-                users.map((user, index) => (<User item={user} key={index} lift={lift}/>))
-            }
+            {users.map((user, index) => (<User item={user} key={index} lift={lift}/>))}
         </div>
 
     );
