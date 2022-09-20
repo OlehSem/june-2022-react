@@ -6,7 +6,7 @@ const getSpacex = () => {
     return fetch(_url)
         .then(value => value.json())
 
-} //return promise
+}
 
 const getSpacexOne = (id)=>{
     return fetch(_url+'/'+id)

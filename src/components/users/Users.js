@@ -1,7 +1,5 @@
-//import {users} from "../../data";
 import User from "../user/User";
 import {useEffect, useState} from "react";
-//import {getUsers} from "../../services/user.api.service";
 import {getUsersAxios} from "../../services/user.api.axios.service";
 import {getSpacex} from "../../services/user.api.service";
 import Spacex from "../spacex/SpaceX";
@@ -14,13 +12,9 @@ export default function Users() {
     let classNameSpacexAll = 'spacex_div_all'
     let classNameSpacexAllh2 = 'spacex_all_h2'
 
-    // useEffect  1 єдиний раз,  використовуються, для того щоб не було перезавантаження, щоб запит виконався тільки 1 раз.
-    //Зазвичай всі запити будемо виконувати всередині useEffect;
-
-    let [users, setUsers] = useState([]);// [get()- в даному випадку [] ,set()] отримати дані і встановити нові;
+    let [users, setUsers] = useState([]);
     let [spacex, setSpacex] = useState([]);
-    let [user, setUser] = useState(null);  // стейтліфтінг, бо ми піднімаємо стан компонента юзер на рівень вище.
-    //Тобто беремо функцію ліфт, за посиланням наповнюємо обєктом юзер, який знаходиться на рівень вище, і вона його виводить
+    let [user, setUser] = useState(null);
 
 
     const lift = (something) => {
@@ -45,13 +39,9 @@ export default function Users() {
 
 
     return (
-        // робимо перевірку тру фолс в 2 способи , які наведені нижче , null завжди кастується до false,
-        // а обєкт - {} - завжди буде true, бо під нього уже виділяється память
 
         <div className={classNameUsers}>
             <hr/>
-            {/*<div>{JSON.stringify(user?.address)}</div>*/}
-            {/*{user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>}*/}
             <div className={classNameUsersbutton}>
                 <span> {user ? <p>Id: {user?.id} Username: {user?.username}</p> : <p></p>}</span>
                 <span> {user ? <p>Email: {user?.email}</p> : <p></p>}</span>
@@ -70,4 +60,3 @@ export default function Users() {
 }
 
 
-// - {JSON.stringify(user)}  - або можна пробігтийсь форічом,  рекурсивною функцією
