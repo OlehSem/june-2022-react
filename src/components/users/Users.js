@@ -12,6 +12,8 @@ export default function Users() {
     let classNameUsersAll = 'homework2_div_all'
     let classNameUsersbutton = 'button_info'
     let classNameSpacexAll = 'spacex_div_all'
+    let classNameSpacexAllh2 = 'spacex_all_h2'
+
     // useEffect  1 єдиний раз,  використовуються, для того щоб не було перезавантаження, щоб запит виконався тільки 1 раз.
     //Зазвичай всі запити будемо виконувати всередині useEffect;
 
@@ -58,6 +60,7 @@ export default function Users() {
             <hr/>
             <div className={classNameUsersAll}>{users.map((user, index) => (
                 <User item={user} key={index} lift={lift}/>))}</div>
+            <h2 className={classNameSpacexAllh2}>SpaceX : </h2>
             <div className={classNameSpacexAll}> {spacex.map((spacex, index) => (
                 <Spacex item1={spacex} key={index}/>))}</div>
         </div>

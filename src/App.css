@@ -90,12 +90,28 @@ body{
   margin: 5px auto;
   box-shadow: 0.2rem 0.2rem 0.3rem #c4c4c4, -0.1rem -0.1rem 0.3rem #cbcbcb;
 }
-.users_div,.simpsons_div,.mortys_div {
-  margin-top: 40px;
+.spacex_div_all {
+  margin: auto;
   font-size: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 .homework1{
+  text-align: center;
+}
+.spacex_img{
+  min-width: 120px;
+  max-height: 120px;
+}
+.spacex_div {
+  min-width: 159px;
+  width: 18%;
+  text-align: center;
+  margin: 40px auto;
+  box-shadow: 0.2rem 0.2rem 0.3rem #c4c4c4, -0.1rem -0.1rem 0.3rem #cbcbcb;
+}
+.spacex_all_h2{
   text-align: center;
 }
