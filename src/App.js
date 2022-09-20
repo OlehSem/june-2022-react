@@ -1,10 +1,6 @@
 
 import './App.css';
 import Users from "./components/users/Users";
-//import UserChoser from "./components/user-choser/UserChoser";
-//import {users} from "./data"; // деструктеризація
-//import User from "./components/user/User"; // викликаємо по дефолту
-
 function App() {
  let classNameUsersInfo='users_info'
 
