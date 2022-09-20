@@ -8,13 +8,15 @@ import Spacex from "../spacex/SpaceX";
 
 
 export default function Users() {
-     let classNameUsers='homework2_div'
-     let classNameUsersbutton='button_info'
+    let classNameUsers = 'homework2_div'
+    let classNameUsersAll = 'homework2_div_all'
+    let classNameUsersbutton = 'button_info'
+    let classNameSpacexAll = 'spacex_div_all'
     // useEffect  1 єдиний раз,  використовуються, для того щоб не було перезавантаження, щоб запит виконався тільки 1 раз.
     //Зазвичай всі запити будемо виконувати всередині useEffect;
 
     let [users, setUsers] = useState([]);// [get()- в даному випадку [] ,set()] отримати дані і встановити нові;
-    let [spacex,setSpacex] = useState([]);
+    let [spacex, setSpacex] = useState([]);
     let [user, setUser] = useState(null);  // стейтліфтінг, бо ми піднімаємо стан компонента юзер на рівень вище.
     //Тобто беремо функцію ліфт, за посиланням наповнюємо обєктом юзер, який знаходиться на рівень вище, і вона його виводить
 
@@ -34,8 +36,8 @@ export default function Users() {
     // }, [])
 
     useEffect(() => {
-         getSpacex().then(value => setSpacex(value));
-        getUsersAxios().then(value => setUsers(value.data))
+        getSpacex().then(value => setSpacex(value));
+        getUsersAxios().then(value => setUsers(value.data));
 
     }, [])
 
@@ -49,13 +51,15 @@ export default function Users() {
             {/*<div>{JSON.stringify(user?.address)}</div>*/}
             {/*{user? <div>aaaaaaa</div>:<div>bbbbbbbb</div>}*/}
             <div className={classNameUsersbutton}>
-                <p> {user ? <p>Id: {user?.id} Username: {user?.username}</p> : <p></p>}</p>
-                <p> {user ? <p>Email: {user?.email}</p> : <p></p>}</p>
-                <p> {user ? <p>Phone : {user?.phone}</p> : <p></p>}</p>
+                <span> {user ? <p>Id: {user?.id} Username: {user?.username}</p> : <p></p>}</span>
+                <span> {user ? <p>Email: {user?.email}</p> : <p></p>}</span>
+                <span> {user ? <p>Phone : {user?.phone}</p> : <p></p>}</span>
             </div>
-            {spacex.map((spacex, index) => (<Spacex item1={spacex} key={index}/>))}
             <hr/>
-            {users.map((user, index) => (<User item={user} key={index} lift={lift}/>))}
+            <div className={classNameUsersAll}>{users.map((user, index) => (
+                <User item={user} key={index} lift={lift}/>))}</div>
+            <div className={classNameSpacexAll}> {spacex.map((spacex, index) => (
+                <Spacex item1={spacex} key={index}/>))}</div>
         </div>
 
     );
